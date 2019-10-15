@@ -5,7 +5,7 @@ const testPalindrome = ({ testName, actual, expected }) => {
   test(testName, () => { expect(actual).to.equal(expected) })
 }
 
-describe('First Factorial', () => {
+describe('Palindrome', () => {
   testPalindrome({ testName: 'a', actual: palindrome('a'), expected: true })
   testPalindrome({ testName: 'ab', actual: palindrome('ab'), expected: false })
   testPalindrome({ testName: 'abba', actual: palindrome('abba'), expected: true })

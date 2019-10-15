@@ -22,5 +22,3 @@ export const palindromeRecursive = (str) => {
 
   return str[0] === str[str.length - 1] && palindromeRecursive(str.substr(1, str.length - 2))
 }
-
-// '1 1 1'

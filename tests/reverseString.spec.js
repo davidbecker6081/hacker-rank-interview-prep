@@ -5,7 +5,7 @@ const testReverseString = ({ testName, actual, expected }) => {
   test(testName, () => { expect(actual).to.equal(expected) })
 }
 
-describe('First Factorial', () => {
+describe('Reverse String', () => {
   testReverseString({ testName: 'a', actual: reverseString('a'), expected: 'a' })
   testReverseString({ testName: 'hello', actual: reverseString('hello'), expected: 'olleh' })
   testReverseString({ testName: 'apple', actual: reverseString('apple'), expected: 'elppa' })

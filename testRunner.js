@@ -19,10 +19,26 @@ export const expect = (actual) => {
 }
 
 const testEquality = (actual, expected) => {
-  if (expected === actual) {
+  if (Array.isArray(actual) && Array.isArray(expected)) {
+    if (actual.length !== expected.length) {
+      console.log(consoleColors.FgRed, "Failed")
+      console.log(consoleColors.FgYellow, `Expected ${actual} to equal ${expected}`)
+    }
+
+    for (let i = 0; i < actual.length; i++) {
+      if (actual[i] !== expected[i]) {
+        console.log(consoleColors.FgRed, "Failed")
+        console.log(consoleColors.FgYellow, `Expected ${actual} to equal ${expected}`)
+      }
+    }
+
     console.log(consoleColors.FgGreen, "Passed")
   } else {
-    console.log(consoleColors.FgRed, "Failed")
-    console.log(consoleColors.FgYellow, `Expected ${actual} to equal ${expected}`)
+    if (expected === actual) {
+      console.log(consoleColors.FgGreen, "Passed")
+    } else {
+      console.log(consoleColors.FgRed, "Failed")
+      console.log(consoleColors.FgYellow, `Expected ${actual} to equal ${expected}`)
+    }
   }
 }
